@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MilkTeaAppAndroid</string>
+    <string name="hint">Tìm kiếm sản phẩm</string>
 </resources>
