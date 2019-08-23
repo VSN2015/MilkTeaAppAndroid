@@ -24,7 +24,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/tbx_search"
             android:drawableRight="@drawable/search_icon"
-
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
