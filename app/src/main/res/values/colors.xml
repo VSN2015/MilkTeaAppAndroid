@@ -3,7 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="tbxSearch">#fbfbfb</color>
+    <color name="tbxSearch">#FBFBFB</color>
     <color name="backgroud">#FFFFFF</color>
     <color name="theme">#0481A0</color>
+    <color name="origento">#000000</color>
     </resources>

@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">MilkTeaAppAndroid</string>
     <string name="hint">Tìm kiếm sản phẩm</string>
+    <string name="dangnhap">Đăng nhập</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="dangki">Đăng kí</string>
+    <string name="quenmatkhau">Quên mật khẩu?</string>
+    <string name="hoten">Họ tên</string>
+    <string name="diachi">Địa chỉ</string>
+    <string name="sodt">Số điện thoại</string>
+    <string name="nhaplaimk">Nhập lại mật khẩu</string>
+    <string name="giohang">Giỏ hàng</string>
+    <string name="giohangdangtrong">Giỏ hàng của bạn đang trống.</string>
+    <string name="tongtien">500.000 vnđ</string>
 </resources>
