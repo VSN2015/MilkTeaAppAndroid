@@ -13,4 +13,7 @@
     <string name="giohang">Giỏ hàng</string>
     <string name="giohangdangtrong">Giỏ hàng của bạn đang trống.</string>
     <string name="tongtien">500.000 vnđ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
