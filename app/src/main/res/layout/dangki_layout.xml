@@ -89,7 +89,7 @@
             android:textColorHighlight="@color/theme" />
 
         <EditText
-            android:id="@+id/ed_Password_DK"
+            android:id="@+id/ed_MatKhau_DK"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
