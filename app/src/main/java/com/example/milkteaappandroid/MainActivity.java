@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
-        setContentView(R.layout.dssanpham_layout);
-=======
+        //setContentView(R.layout.dssanpham_layout);
         setContentView(R.layout.trangchu_layout);
 
         /*include nav bottom in Home*/
@@ -58,6 +56,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         }
         return false;
->>>>>>> bd2199d6806a51931a2af7e505ae134ba5ada684
     }
 }
