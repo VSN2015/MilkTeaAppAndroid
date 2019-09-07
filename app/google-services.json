@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "780863874512",
+    "firebase_url": "https://milkteaapp-4e9ef.firebaseio.com",
+    "project_id": "milkteaapp-4e9ef",
+    "storage_bucket": "milkteaapp-4e9ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780863874512:android:5e42a43a25f65bad2105d5",
+        "android_client_info": {
+          "package_name": "com.example.milkteaappandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780863874512-ue6imojpmbfg064o9fag0p3ecqcdmbct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.milkteaappandroid",
+            "certificate_hash": "2506f0b2ce0e2ed918d896038f8a10ce552cef6e"
+          }
+        },
+        {
+          "client_id": "780863874512-uflf3gsl5uaf98arajbn6n0ge9vf4p1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6zvMd4a29Pq14JkZageh2wlCd8rMKIrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780863874512-uflf3gsl5uaf98arajbn6n0ge9vf4p1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
