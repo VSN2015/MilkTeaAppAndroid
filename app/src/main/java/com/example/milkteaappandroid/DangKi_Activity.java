@@ -1,6 +1,5 @@
 package com.example.milkteaappandroid;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,7 +60,7 @@ public class DangKi_Activity extends AppCompatActivity implements View.OnClickLi
         String matkhau = edMatKhau.getText().toString();
         String nhaplaimk = edNhapLaiMK.getText().toString();
         String thongbaoloinhap = getString(R.string.thongbaoloidangki);
-        String thongbaomk = getString(R.string.thongbaonhaplaimk);
+       // String thongbaomk = getString(R.string.thongbaonhaplaimk);
 
         // kiểm tra điều kiện
         if(hoten.trim().length() < 0){
