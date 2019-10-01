@@ -47,12 +47,12 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/email"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:textColorHighlight="@color/theme"
             android:textColorLink="@color/theme" />
 
         <EditText
-            android:id="@+id/ed_PasswordDN"
+            android:id="@+id/ed_MatkhauDN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
