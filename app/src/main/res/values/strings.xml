@@ -13,9 +13,14 @@
     <string name="giohang">Giỏ hàng</string>
     <string name="giohangdangtrong">Giỏ hàng của bạn đang trống.</string>
     <string name="tongtien">500.000 vnđ</string>
-    <string name="thongbaoloidangki">Vui lòng kiểm tra lại </string>
+
+    <string name="thongbaotendangki">Bạn chưa nhập họ tên</string>
+    <string name="thongbaosdtdangki">Bạn vui lòng kiểm tra lại số điện thoại!</string>
+    <string name="thongbaodiachidangki">Bạn vui lòng kiểm tra lại địa chỉ!</string>
+    <string name="thongbaoemail">Bạn vui lòng kiểm tra lại email!</string>
+    <string name="thongbaomatkhau">Mật khẩu phải lớn hơn 6 ký tự!</string>
     <string name="thongbaonhaplaimk">Mật khẩu phải giống mật khẩu ở trên.</string>
-    <string name="thongbaodangkithanhcong">Đăng kí thành công!</string>
+    <string name="thongbaodangkithanhcong">Đăng kí thành công! Đăng nhập để tiếp tục.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
