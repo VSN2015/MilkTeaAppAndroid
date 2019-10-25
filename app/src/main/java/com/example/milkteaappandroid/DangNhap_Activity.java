@@ -29,17 +29,18 @@ public class DangNhap_Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dangnhap_layout);
 
+
 //        tìm bên giao diện và gán vào các giá trị
-        txtDangKiMoi = findViewById(R.id.txt_DangKiMoi);
-        btnDangNhap = findViewById(R.id.btn_DangNhap);
+       txtDangKiMoi = findViewById(R.id.txt_DangKiMoi);
+       btnDangNhap = findViewById(R.id.btn_DangNhap);
         emailDN = findViewById(R.id.ed_EmailDN);
         matkhauDN = findViewById(R.id.ed_MatkhauDN);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-//        firebaseAuth.signOut();
+      firebaseAuth = FirebaseAuth.getInstance();
+     firebaseAuth.signOut();
 
-//      lắng nghe sự kiện click của    image button, đăng kí mới
-        txtDangKiMoi.setOnClickListener(this);
+   // lắng nghe sự kiện click của    image button, đăng kí mới
+       txtDangKiMoi.setOnClickListener(this);
 
         btnDangNhap.setOnClickListener(this);
 

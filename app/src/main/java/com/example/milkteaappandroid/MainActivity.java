@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.trangchu_layout);
+        setContentView(R.layout.f_danhsachsanpham);
 
         // demo cong nghe phan mem.
 
