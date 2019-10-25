@@ -5,38 +5,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ChildEventListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     DatabaseReference databaseReference;
-    AdapterTest adapterTest;
-    List<Test> testList;
-    ListView listView;
-
-    EditText txtten, txttuoi;
-    Button btnthem;
 
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//<<<<<<< HEAD
         setContentView(R.layout.f_danhsachsanpham);
 
         // demo cong nghe phan mem.
@@ -90,7 +70,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
 
+//=======
+//>>>>>>> 9f673c7f8fbc3ca500c9e389c248cd32d51b7b03
 
+        setContentView(R.layout.trangchu_layout);
 
         /*include nav bottom in Home*/
         bottomNavigationView =findViewById(R.id.bottom_nav_view);
@@ -129,36 +112,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         }
         return false;
-    }
-
-    @Override
-    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-        Test test =dataSnapshot.getValue(Test.class);
-        testList.add(test);
-        adapterTest.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-        testList.clear();
-        databaseReference.removeEventListener(this);
-        databaseReference.addChildEventListener(this);
-    }
-
-    @Override
-    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-        testList.clear();
-        databaseReference.removeEventListener(this);
-        databaseReference.addChildEventListener(this);
-    }
-
-    @Override
-    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-    }
-
-    @Override
-    public void onCancelled(@NonNull DatabaseError databaseError) {
-
     }
 }
