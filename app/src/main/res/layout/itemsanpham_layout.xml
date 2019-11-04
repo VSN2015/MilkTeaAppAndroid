@@ -4,38 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#DFE5E7"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="160dp"
+        android:layout_width="180dp"
         android:layout_height="200dp">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="100dp"
+            android:id="@+id/img_spmoi"
+            android:layout_width="0dp"
             android:layout_height="200dp"
+            android:background="@color/theme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/theme"
-           />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txttensp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:minLines="2"
+        android:paddingLeft="3dp"
+        android:text="Trà sữa thái xanh"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="11dp"
         android:textStyle="bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="3dp">
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/txtgia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="40,000đ"
@@ -46,10 +51,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/img_ctsp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/backgroud"
+            android:background="#DFE5E7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -1,4 +1,4 @@
-package com.example.milkteaappandroid;
+package com.example.milkteaappandroid.View;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -12,6 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.widget.ViewFlipper;
 
+import com.example.milkteaappandroid.Controller.SanPhamMoiController;
+import com.example.milkteaappandroid.Model.SanPhamModel;
+import com.example.milkteaappandroid.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +26,8 @@ public class Home extends Fragment {
         // Required empty public constructor
     }
     ViewFlipper viewFlipper;
-
+    SanPhamMoiController sanPhamMoiController;
+    RecyclerView recyclerSanPhamMoi;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,13 +35,7 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_home, container, false);
 
-//        RecyclerView recyclerView =v.findViewById(R.id.recyclerlayout);
-//
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-//
-//        recyclerView.setLayoutManager(linearLayoutManager);
-
-        // tạo slide
+        // tạo slide================================================================================
         int images[] ={R.drawable.slide1,R.drawable.slide2};
 
         viewFlipper= v.findViewById(R.id.slideImage);
@@ -44,12 +43,20 @@ public class Home extends Fragment {
         for (int img: images) {
                 Slider(img);
         }
-
-        // end tạo slide
+        // end tạo slide============================================================================
+        recyclerSanPhamMoi=v.findViewById(R.id.recycler_spmoi);
 
         return v;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        sanPhamMoiController = new SanPhamMoiController(getContext());
+
+        sanPhamMoiController.getDSSanPhamMoiController(recyclerSanPhamMoi);
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

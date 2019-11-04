@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
-    tools:context=".Home">
+    tools:context=".View.Home">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
@@ -15,12 +15,68 @@
         android:background="@color/theme"
         android:focusableInTouchMode="false"
         app:iconifiedByDefault="false"
-        app:queryHint="Nhìn cái gì- Search ở đây nè :v" />
+        app:queryHint="Nhìn cái gì- Search ở đây nè :v" >
 
-    <ViewFlipper
-        android:id="@+id/slideImage"
+    </androidx.appcompat.widget.SearchView>
+
+    <ScrollView
+        android:id="@+id/scolllayout"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:layout_margin="7dp" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:id="@+id/slideImage"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_margin="7dp" >
+
+            </ViewFlipper>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="30dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="1dp"
+                    android:background="@color/theme" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sản phẩm mới"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/theme" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_spmoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
