@@ -83,6 +83,7 @@ public class DangKi_Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_DangKi:{
                 // kiểm tra điều kiện
                 if(hoten.trim().length() == 0){
+                    edHoTen.setError("abc");
                     Toast.makeText(this, thongbao_hoten, Toast.LENGTH_SHORT).show();
                 }
                 else if(diachi.trim().length() == 0){
