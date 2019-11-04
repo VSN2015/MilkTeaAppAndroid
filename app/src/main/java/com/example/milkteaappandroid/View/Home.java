@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.widget.ViewFlipper;
 
 
@@ -26,6 +29,12 @@ public class Home extends Fragment {
 
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_home, container, false);
+
+//        RecyclerView recyclerView =v.findViewById(R.id.recyclerlayout);
+//
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
+//
+//        recyclerView.setLayoutManager(linearLayoutManager);
 
         // tạo slide
         int images[] ={R.drawable.slide1,R.drawable.slide2};
