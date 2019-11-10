@@ -40,7 +40,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:19.0.0' // Thuong
 
-    implementation 'com.google.firebase:firebase-database:19.1.0'
+    implementation 'com.google.firebase:firebase-database:19.1.0'//China
+    implementation 'com.google.firebase:firebase-storage:19.1.0' //China
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
 
