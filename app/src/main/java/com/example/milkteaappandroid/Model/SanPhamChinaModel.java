@@ -1,5 +1,7 @@
 package com.example.milkteaappandroid.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -16,13 +18,37 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SanPhamChinaModel {
+public class SanPhamChinaModel implements Parcelable {
 
     public String maSanPham;
     public String hinhanhsanpham;
     public String motasanpham;
     public String tensanpham;
     public Long gia;
+
+    protected SanPhamChinaModel(Parcel in) {
+        maSanPham = in.readString();
+        hinhanhsanpham = in.readString();
+        motasanpham = in.readString();
+        tensanpham = in.readString();
+        if (in.readByte() == 0) {
+            gia = null;
+        } else {
+            gia = in.readLong();
+        }
+    }
+
+    public static final Creator<SanPhamChinaModel> CREATOR = new Creator<SanPhamChinaModel>() {
+        @Override
+        public SanPhamChinaModel createFromParcel(Parcel in) {
+            return new SanPhamChinaModel(in);
+        }
+
+        @Override
+        public SanPhamChinaModel[] newArray(int size) {
+            return new SanPhamChinaModel[size];
+        }
+    };
 
     public Long getGia() {
         return gia;
@@ -92,6 +118,25 @@ public class SanPhamChinaModel {
         };
         nodeRoot.addListenerForSingleValueEvent(valueEventListener);
 
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(maSanPham);
+        parcel.writeString(hinhanhsanpham);
+        parcel.writeString(motasanpham);
+        parcel.writeString(tensanpham);
+        if (gia == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeLong(gia);
+        }
     }
 
 //    public void getDanhSachSanPhamChina() {

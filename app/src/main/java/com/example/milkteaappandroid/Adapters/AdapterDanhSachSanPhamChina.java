@@ -1,5 +1,7 @@
 package com.example.milkteaappandroid.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -10,10 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.milkteaappandroid.Model.SanPhamChinaModel;
 import com.example.milkteaappandroid.R;
+import com.example.milkteaappandroid.View.ChiTietSanPham_Activity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -25,21 +29,25 @@ public class AdapterDanhSachSanPhamChina extends RecyclerView.Adapter<AdapterDan
 
     List <SanPhamChinaModel> sanPhamChinaModelList;
     int resource;
-    public  AdapterDanhSachSanPhamChina (List <SanPhamChinaModel> sanPhamChinaModelList,int resource)
+    Context context;
+    public  AdapterDanhSachSanPhamChina (Context context,List <SanPhamChinaModel> sanPhamChinaModelList,int resource)
     {
         this.sanPhamChinaModelList = sanPhamChinaModelList;
         this.resource = resource;
+        this.context = context;
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tensanpham;
         TextView gia;
         ImageView hinhAnhSanPham;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
             tensanpham = itemView.findViewById(R.id.txttensp);
             gia = itemView.findViewById(R.id.txtgia);
             hinhAnhSanPham = itemView.findViewById(R.id.hinhAnhSanPham);
+            cardView = itemView.findViewById(R.id.sanPham);
         }
     }
 
@@ -79,6 +87,14 @@ public class AdapterDanhSachSanPhamChina extends RecyclerView.Adapter<AdapterDan
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle any errors
+            }
+        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent SpOrder = new Intent(context, ChiTietSanPham_Activity.class);
+                SpOrder.putExtra("sanPham",sanPhamChinaModel);
+                context.startActivity(SpOrder);
             }
         });
 

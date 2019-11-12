@@ -24,6 +24,9 @@
         <activity android:name=".View.DangNhap_Activity">
 
         </activity>
+        <activity android:name=".View.ChiTietSanPham_Activity">
+
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.milkteaappandroid.Controller.SanPhamChinaControler;
 import com.example.milkteaappandroid.Model.SanPhamChinaModel;
@@ -23,6 +24,7 @@ public class DSSanPham extends Fragment {
     SanPhamChinaControler sanPhamChinaControler;
 
     RecyclerView recyclerDanhSachSanPham;
+    ProgressBar progressBarDanhSachSanPham;
 
     public DSSanPham() {
         // Required empty public constructor
@@ -35,6 +37,7 @@ public class DSSanPham extends Fragment {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_dssan_pham, container, false);
         recyclerDanhSachSanPham = view.findViewById(R.id.goods);
+        progressBarDanhSachSanPham = view.findViewById(R.id.watting);
 
 
         return view;
@@ -44,7 +47,7 @@ public class DSSanPham extends Fragment {
     public void onStart() {
         super.onStart();
        sanPhamChinaControler = new SanPhamChinaControler(getContext());
-        sanPhamChinaControler.getDanhSachSanPham(recyclerDanhSachSanPham);
+        sanPhamChinaControler.getDanhSachSanPham(getContext(),recyclerDanhSachSanPham,progressBarDanhSachSanPham);
 
     }
 }

@@ -23,16 +23,23 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="30dp" />
 
-        <ScrollView
+        <ProgressBar
+            android:id="@+id/watting"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="200dp"
+            android:indeterminate="false"
+            android:indeterminateTint="@color/theme"
+            android:scrollbarStyle="outsideInset" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/goods"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/goods"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </ScrollView>
+            android:layout_height="438dp"
+            android:orientation="vertical" />
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

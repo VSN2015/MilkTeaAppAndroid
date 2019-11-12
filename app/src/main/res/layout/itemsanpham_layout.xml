@@ -6,6 +6,7 @@
     android:layout_height="210dp"
     android:layout_marginTop="5dp"
     android:layout_marginLeft="5dp"
+    android:id="@+id/sanPham"
     >
 
 
@@ -18,8 +19,8 @@
 
         <ImageView
             android:id="@+id/hinhAnhSanPham"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="149dp"
+            android:layout_height="215dp"
             app:srcCompat="@drawable/disconnect"
             android:scaleType="fitXY"
             android:layout_weight="1"/>
@@ -51,20 +52,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/btn_dangnhap"
-                android:text="+"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="2dp"/>
 
             <TextView
                 android:id="@+id/textView4"

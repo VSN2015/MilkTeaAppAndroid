@@ -2,6 +2,8 @@ package com.example.milkteaappandroid.Controller;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,12 +29,12 @@ public class SanPhamChinaControler {
 
     }
 
-    public void getDanhSachSanPham(final RecyclerView recyclerView) {
+    public void getDanhSachSanPham(Context context,final RecyclerView recyclerView, final ProgressBar progressBar) {
         final List<SanPhamChinaModel> sanPhamChinaModelList = new ArrayList<>();
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(context,2);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapterDanhSachSanPhamChina = new AdapterDanhSachSanPhamChina(sanPhamChinaModelList, R.layout.itemsanpham_layout);
+        adapterDanhSachSanPhamChina = new AdapterDanhSachSanPhamChina(context,sanPhamChinaModelList, R.layout.itemsanpham_layout);
 
         recyclerView.setAdapter(adapterDanhSachSanPhamChina);
         SanPhamChinaInterface sanPhamChinaInterface = new SanPhamChinaInterface() {
@@ -43,6 +45,7 @@ public class SanPhamChinaControler {
         sanPhamChinaModelList.add(sanPhamChinaModel);
                // Log.d("China",sanPhamChinaModel.getHinhanhsanpham()+"");
         adapterDanhSachSanPhamChina.notifyDataSetChanged();
+        progressBar.setVisibility(View.GONE);
             }
         };
         sanPhamChinaModel.getDanhSachSanPhamChina(sanPhamChinaInterface);
