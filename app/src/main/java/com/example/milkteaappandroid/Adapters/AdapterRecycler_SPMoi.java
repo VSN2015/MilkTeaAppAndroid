@@ -1,9 +1,12 @@
 package com.example.milkteaappandroid.Adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,11 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.milkteaappandroid.Model.SanPhamModel;
 import com.example.milkteaappandroid.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
 public class AdapterRecycler_SPMoi extends RecyclerView.Adapter<AdapterRecycler_SPMoi.ViewHolder> {
     List<SanPhamModel>sanPhamModelList;
+    List<SanPhamModel>sanPhamModelListNew;
     int resource;
     public AdapterRecycler_SPMoi(List<SanPhamModel>sanPhamModelList,int resource){
         this.sanPhamModelList=sanPhamModelList;
@@ -25,11 +33,12 @@ public class AdapterRecycler_SPMoi extends RecyclerView.Adapter<AdapterRecycler_
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTenSanPham;
         TextView txtGia;
-
+        ImageView imgSanPham;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTenSanPham=itemView.findViewById(R.id.txttensp);
-            //txtGia =itemView.findViewById(R.id.txtgia);
+            txtGia =itemView.findViewById(R.id.txtgia);
+            imgSanPham=itemView.findViewById(R.id.img_spmoi);
         }
     }
 
@@ -42,19 +51,34 @@ public class AdapterRecycler_SPMoi extends RecyclerView.Adapter<AdapterRecycler_
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterRecycler_SPMoi.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final AdapterRecycler_SPMoi.ViewHolder holder, int position) {
         SanPhamModel sanPhamModel = sanPhamModelList.get(position);
 
-        Log.d("kiemtra wwtf",sanPhamModel.getMotasanpham());
         holder.txtTenSanPham.setText(sanPhamModel.getTensanpham());
-        //holder.txtGia.setText(sanPhamModel.get);
-
+        holder.txtGia.setText(sanPhamModel.getGia()+"đ");
+        if(sanPhamModel.getHinhanhsanpham().length()>0){
+            StorageReference storageAnhSP = FirebaseStorage.getInstance().getReference().child("hinhanhsp").child(sanPhamModel.getHinhanhsanpham());
+            long ONE_MEGABYTE= 1024 * 1024;
+            storageAnhSP.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                @Override
+                public void onSuccess(byte[] bytes) {
+                    Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                    holder.imgSanPham.setImageBitmap(bitmap);
+                    Log.d("anh","sss");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("anh","sssdd");
+                }
+            });
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return sanPhamModelList.size();
+        return sanPhamModelList.size() ;
     }
 
 
