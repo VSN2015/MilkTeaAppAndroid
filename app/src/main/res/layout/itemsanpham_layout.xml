@@ -10,7 +10,6 @@
     >
 
 
-<<<<<<< HEAD
         <ImageView
             android:id="@+id/img_spmoi"
             android:layout_width="0dp"
@@ -21,27 +20,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-    <TextView
-        android:id="@+id/txttensp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minLines="2"
-        android:paddingLeft="3dp"
-        android:text="Trà sữa thái xanh"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="11dp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/txttensp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minLines="2"-->
+<!--        android:paddingLeft="3dp"-->
+<!--        android:text="Trà sữa thái xanh"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+<!--        android:textSize="11dp"-->
+<!--        android:textStyle="bold" />-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-=======
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
     <LinearLayout
->>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
         >
 
         <ImageView
@@ -56,18 +52,14 @@
             android:id="@+id/txttensp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="40,000đ"
             android:textColor="#E90C1DBE"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-=======
             android:layout_marginLeft="2dp"
             android:text="TextView"
->>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
-
             android:textColor="#000000"
             android:textStyle="bold" />
 

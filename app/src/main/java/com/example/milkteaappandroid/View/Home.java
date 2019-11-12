@@ -129,7 +129,7 @@ public class Home extends Fragment {
 
         viewFlipper.addView(imageView);
 
-        viewFlipper.setFlipInterval(5000);
+        viewFlipper.setFlipInterval(4000);
 
         viewFlipper.setAutoStart(true);
 

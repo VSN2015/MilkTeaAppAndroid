@@ -38,7 +38,7 @@ public class AdapterRecycler_SPMoi extends RecyclerView.Adapter<AdapterRecycler_
             super(itemView);
             txtTenSanPham=itemView.findViewById(R.id.txttensp);
             txtGia =itemView.findViewById(R.id.txtgia);
-            imgSanPham=itemView.findViewById(R.id.img_spmoi);
+            imgSanPham=itemView.findViewById(R.id.hinhAnhSanPham);
         }
     }
 

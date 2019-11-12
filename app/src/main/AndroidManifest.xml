@@ -32,11 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.DangKi_Activity"></activity>
-        <activity android:name=".View.DangNhap_Activity"></activity>
 
-<<<<<<< HEAD
-=======
         <activity android:name=".View.DangKi_Activity">
 
         </activity>
@@ -47,7 +43,6 @@
         <activity android:name=".View.ChiTietSanPham_Activity">
 
         </activity>
->>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
