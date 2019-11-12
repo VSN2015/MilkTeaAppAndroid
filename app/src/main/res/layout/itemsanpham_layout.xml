@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:background="#DFE5E7"
-    android:orientation="vertical">
+    android:layout_width="152dp"
+    android:layout_height="210dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:id="@+id/sanPham"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="180dp"
-        android:layout_height="200dp">
 
+<<<<<<< HEAD
         <ImageView
             android:id="@+id/img_spmoi"
             android:layout_width="0dp"
@@ -36,32 +35,70 @@
         android:textStyle="bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+=======
+    <LinearLayout
+>>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="3dp">
+        android:orientation="vertical"
+
+        >
+
+        <ImageView
+            android:id="@+id/hinhAnhSanPham"
+            android:layout_width="149dp"
+            android:layout_height="215dp"
+            app:srcCompat="@drawable/disconnect"
+            android:scaleType="fitXY"
+            android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/txtgia"
-            android:layout_width="wrap_content"
+            android:id="@+id/txttensp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="40,000đ"
             android:textColor="#E90C1DBE"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+=======
+            android:layout_marginLeft="2dp"
+            android:text="TextView"
+>>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
 
-        <ImageButton
-            android:id="@+id/img_ctsp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#DFE5E7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/add_icon" />
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            >
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtgia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:text="TextView"
+                android:textColor="#FF0000"
 
-</LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" vnđ"
+                android:textColor="#FF0000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtgia"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

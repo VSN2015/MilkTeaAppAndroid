@@ -48,8 +48,13 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:19.0.0' // Thuong
 
+<<<<<<< HEAD
     implementation 'com.google.firebase:firebase-database:19.1.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
+=======
+    implementation 'com.google.firebase:firebase-database:19.1.0'//China
+    implementation 'com.google.firebase:firebase-storage:19.1.0' //China
+>>>>>>> 1e5e56ba70ed46528923bff00bf4012490b9bbb0
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
 
