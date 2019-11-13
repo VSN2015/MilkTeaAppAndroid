@@ -83,22 +83,27 @@ public class DangKi_Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_DangKi:{
                 // kiểm tra điều kiện
                 if(hoten.trim().length() == 0){
-                    edHoTen.setError("abc");
+                    edHoTen.setError("Họ tên không bỏ trống");
                     Toast.makeText(this, thongbao_hoten, Toast.LENGTH_SHORT).show();
                 }
                 else if(diachi.trim().length() == 0){
+                    edDiaChi.setError("Địa chỉ không bỏ trống");
                     Toast.makeText(this, thongbao_diachi, Toast.LENGTH_SHORT).show();
                 }
                 else if(sdt.trim().length() < 10 || sdt.trim().length() > 10){
+                    edSdt.setError("Số điện thoại không đúng");
                     Toast.makeText(this, thongbao_sdt, Toast.LENGTH_SHORT).show();
                 }
                 else if(email.trim().length() == 0){
+                    edEmail.setError("Email không đúng");
                     Toast.makeText(this, thongbao_email, Toast.LENGTH_SHORT).show();
                 }
                 else if(matkhau.trim().length() < 6){
+                    edMatKhau.setError("Mật khẩu phải lớn hơn 6 ký tự");
                     Toast.makeText(this, thongbao_matkhau, Toast.LENGTH_SHORT).show();
                 }
                 else if(!nhaplaimk.equals(matkhau)){
+                    edNhapLaiMK.setError("Phải giống mật khẩu ở trên");
                     Toast.makeText(this, thongbao_nhaplaimk, Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -106,7 +111,10 @@ public class DangKi_Activity extends AppCompatActivity implements View.OnClickLi
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+
+                                firebaseAuth.signOut();
                                 Toast.makeText(DangKi_Activity.this, thongbao_dkthanhcong , Toast.LENGTH_SHORT).show();
+
                             }
                         }
                     });

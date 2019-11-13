@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
 
     <LinearLayout
@@ -12,105 +14,95 @@
         android:orientation="horizontal">
 
 
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="278dp"
+        android:layout_height="302dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-
         android:layout_marginBottom="0dp"
         android:background="@drawable/bg_trasua_up"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="189dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/dangnhap"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+        <!--                <TextView-->
+        <!--            android:id="@+id/textView8"-->
+        <!--            android:layout_width="189dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="60dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:text="@string/dangnhap"-->
+        <!--            android:textSize="22sp"-->
+        <!--            android:textStyle="bold" />-->
+
 
         <EditText
-            android:id="@+id/ed_EmailDN"
-            android:layout_width="match_parent"
+            android:id="@+id/ed_Email"
+            android:layout_width="341dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-            android:drawableLeft="@drawable/user_icon"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="@string/email"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:height="55dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:drawablePadding="4dp"
+            android:hint="Username"
             android:inputType="textEmailAddress"
-            android:textColorHighlight="@color/theme"
-            android:textColorLink="@color/theme" />
+            android:padding="18dp"
+            android:textAllCaps="false"
+            android:textColorHint="@color/theme" />
 
         <EditText
-            android:id="@+id/ed_MatkhauDN"
-            android:layout_width="match_parent"
+            android:id="@+id/ed_Password"
+            android:layout_width="341dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:drawableLeft="@drawable/lock_icon"
-            android:backgroundTint="@color/theme"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:height="55dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+            android:drawablePadding="4dp"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:padding="18dp"
+            android:textColorHint="@color/theme" />
 
-            <TextView
-                android:id="@+id/txt_QuenMK"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="50dp"
-                android:layout_weight="1"
-                android:autoLink="web"
-                android:textColor="@color/origento"
-                android:text="@string/quenmatkhau"
-                android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="341dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="8dp"
+            android:height="57dp"
+            android:background="@color/theme"
+            android:padding="18dp"
+            android:text="ĐĂNG NHẬP"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/txt_DangKiMoi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight="1"
-                android:autoLink="email"
-                android:gravity="right"
-                android:textColor="@color/origento"
-                android:text="@string/dangki" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btnregister"
+            android:layout_width="341dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="5dp"
+            android:height="57dp"
+            android:background="@color/theme"
+            android:padding="18dp"
+            android:text="ĐĂNG KÝ"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="81dp"
-        android:layout_height="388dp"
-        android:layout_marginLeft="240dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btn_DangNhap"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_dangnhap"
-            />
-    </LinearLayout>
 
 </RelativeLayout>

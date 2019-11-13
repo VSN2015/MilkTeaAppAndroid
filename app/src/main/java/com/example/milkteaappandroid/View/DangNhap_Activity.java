@@ -1,24 +1,24 @@
 package com.example.milkteaappandroid.View;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.milkteaappandroid.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+        import com.example.milkteaappandroid.R;
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.auth.FirebaseUser;
+
+        import java.util.regex.Pattern;
 
 public class DangNhap_Activity extends AppCompatActivity implements View.OnClickListener, FirebaseAuth.AuthStateListener {
 
-    ImageButton btnDangNhap;
-    TextView txtDangKiMoi;
+    Button btnDangNhap, btnDangKy;
     EditText emailDN, matkhauDN;
     FirebaseAuth firebaseAuth;
 
@@ -27,21 +27,15 @@ public class DangNhap_Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dangnhap_layout);
 
+        btnDangNhap = findViewById(R.id.btnlogin);
+        btnDangKy = findViewById(R.id.btnregister);
+        emailDN = findViewById(R.id.ed_Email);
+        matkhauDN = findViewById(R.id.ed_Password);
 
-//        tìm bên giao diện và gán vào các giá trị
-       txtDangKiMoi = findViewById(R.id.txt_DangKiMoi);
-       btnDangNhap = findViewById(R.id.btn_DangNhap);
-        emailDN = findViewById(R.id.ed_EmailDN);
-        matkhauDN = findViewById(R.id.ed_MatkhauDN);
-
-      firebaseAuth = FirebaseAuth.getInstance();
-     firebaseAuth.signOut();
-
-   // lắng nghe sự kiện click của    image button, đăng kí mới
-       txtDangKiMoi.setOnClickListener(this);
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
         btnDangNhap.setOnClickListener(this);
-
+        btnDangKy.setOnClickListener(this);
     }
 
 
@@ -63,22 +57,42 @@ public class DangNhap_Activity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if(id == R.id.btn_DangNhap){
+        if(id == R.id.btnlogin){
             dangNhap();
+        }if(id == R.id.btnregister){
+            Intent intent = new Intent(DangNhap_Activity.this, DangKi_Activity.class);
+            startActivity(intent);
         }
         else{
 
         }
     }
 
-//    tạo hàm Đăng nhập
+    //    tạo hàm Đăng nhập
     private void dangNhap(){
-        // lấy email, mk người dùng nhập ở bên giao diện .
         String email = emailDN.getText().toString();
         String matkhau = matkhauDN.getText().toString();
-        //firebaseAuth.signOut();
+        if(!isValid(emailDN.getText().toString())){
+            emailDN.setError("Email không được bỏ trống!");
+            return;
+        }
+        if(matkhauDN.getText().toString().isEmpty()){
+            matkhauDN.setError("Mật khẩu không để trống! ");
+            return;
+        }
+        else {
+            firebaseAuth.signInWithEmailAndPassword(email, matkhau);
+        }
 
-        firebaseAuth.signInWithEmailAndPassword(email, matkhau);
+
+    }
+
+    private boolean isValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+ "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+        return pat.matcher(email).matches();
     }
 
 
@@ -96,3 +110,4 @@ public class DangNhap_Activity extends AppCompatActivity implements View.OnClick
         }
     }
 }
+

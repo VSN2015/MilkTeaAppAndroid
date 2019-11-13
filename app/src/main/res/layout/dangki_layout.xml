@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_dangki"
+        android:background="@drawable/bg_1"
         android:orientation="vertical">
 
 
@@ -17,19 +17,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
+            android:background="@android:color/white"
+            android:gravity="center"
             android:text="@string/dangki"
             android:textSize="36dp"
             app:fontFamily="@font/petit_formal_script" />
 
         <EditText
             android:id="@+id/ed_HoTen_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-            android:drawableLeft="@drawable/user_icon"
+            android:layout_width="341dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="46dp"
+            android:height="57dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/hoten"
@@ -41,14 +43,12 @@
 
         <EditText
             android:id="@+id/ed_SDT_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_width="341dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-
-            android:drawableLeft="@drawable/phone_icon"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/sodt"
@@ -57,14 +57,12 @@
 
         <EditText
             android:id="@+id/ed_DiaChi_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-
-            android:drawableLeft="@drawable/diachi_icon"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_pin_drop_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/diachi"
@@ -74,14 +72,12 @@
 
         <EditText
             android:id="@+id/ed_Email_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_width="341dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-
-            android:drawableLeft="@drawable/email_icon"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_mail_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/email"
@@ -91,14 +87,12 @@
 
         <EditText
             android:id="@+id/ed_MatKhau_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-
-            android:drawableLeft="@drawable/lock_icon"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/password"
@@ -107,13 +101,12 @@
 
         <EditText
             android:id="@+id/ed_NhapLaiPass_DK"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_width="341dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="@color/theme"
-            android:drawableLeft="@drawable/lock_icon"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/nhaplaimk"
@@ -122,15 +115,10 @@
 
         <Button
             android:id="@+id/btn_DangKi"
-            android:layout_width="match_parent"
+            android:layout_width="341dp"
             android:layout_height="55dp"
-            android:layout_marginLeft="40dp"
+            android:layout_gravity="center"
             android:layout_marginTop="40dp"
-
-
-            android:layout_marginRight="40dp"
-
-            android:layout_marginBottom="30dp"
             android:background="@color/theme"
             android:backgroundTint="@color/theme"
             android:ems="10"
@@ -143,8 +131,10 @@
             android:id="@+id/txtDangNhap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center|top"
-            android:text="Đăng nhập" />
+            android:text="Đăng nhập"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </RelativeLayout>
