@@ -12,16 +12,34 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-            <EditText
-                android:id="@+id/editText3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/tbx_search"
-                android:drawableLeft="@drawable/search_icon"
-                android:ems="10"
-                android:hint="@string/hint"
-                android:inputType="textPersonName"
-                android:paddingLeft="30dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Danh sách toàn bộ sản phẩm"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/theme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ProgressBar
             android:id="@+id/watting"
@@ -31,13 +49,15 @@
             android:layout_gravity="center"
             android:layout_marginTop="200dp"
             android:indeterminate="false"
-            android:indeterminateTint="@color/theme"
+
+            android:theme="@style/progressBarBlue"
             android:scrollbarStyle="outsideInset" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/goods"
             android:layout_width="match_parent"
-            android:layout_height="438dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/flag"
             android:orientation="vertical" />
 
     </LinearLayout>
