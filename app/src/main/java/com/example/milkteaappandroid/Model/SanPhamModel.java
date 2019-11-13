@@ -16,9 +16,19 @@ import java.util.List;
 
 public class SanPhamModel {
     public  String maSanPham;
+    public long gia;
     public  String hinhanhsanpham;
     public  String motasanpham;
     public  String tensanpham;
+
+
+    public long getGia() {
+        return gia;
+    }
+
+    public void setGia(long gia) {
+        this.gia = gia;
+    }
 
     public String getMaSanPham() {
         return maSanPham;
@@ -68,6 +78,7 @@ public class SanPhamModel {
                 for(DataSnapshot valueSanPham : dataSnapshotSanPham.getChildren()){
                     for (DataSnapshot value : valueSanPham.getChildren()){
                         SanPhamModel sanPhamModel =value.getValue(SanPhamModel.class);
+                        sanPhamModel.setMaSanPham(valueSanPham.getKey());
                         //Log.d("kiemtra:",sanPhamModel.getTensanpham());
                         sanphammoiInterface.getDanhSachSanPhamMoiModel(sanPhamModel);
                     }

@@ -2,7 +2,9 @@ package com.example.milkteaappandroid.Controller;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +27,7 @@ public class SanPhamMoiController {
         this.context=context;
         sanPhamModel = new SanPhamModel();
     }
-    public void getDSSanPhamMoiController(RecyclerView recyclerView){
+    public void getDSSanPhamMoiController(RecyclerView recyclerView, final ProgressBar progressBar){
         sanPhamModelList = new ArrayList<>();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false);
@@ -41,9 +43,12 @@ public class SanPhamMoiController {
             public void getDanhSachSanPhamMoiModel(SanPhamModel sanPhamModel) {
                 sanPhamModelList.add(sanPhamModel);
                 adapterRecycler_spMoi.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
 
             }
         };
+
         sanPhamModel.getDanhSachSanPhamMoi(sanphammoiInterface);
+
     }
 }

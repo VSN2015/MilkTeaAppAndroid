@@ -29,19 +29,28 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:27.1.1'
+
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
 
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
 
     implementation 'com.google.firebase:firebase-analytics:17.2.0' // 17.2.0 note
 
-    implementation 'com.google.firebase:firebase-auth:19.0.0' // Thuong
+    implementation 'com.google.firebase:firebase-auth:19.1.0' // Thuong
 
-    implementation 'com.google.firebase:firebase-database:19.1.0'//China
-    implementation 'com.google.firebase:firebase-storage:19.1.0' //China
+    implementation 'com.google.firebase:firebase-database:19.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
 

@@ -1,20 +1,34 @@
 package com.example.milkteaappandroid.View;
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.widget.ProgressBar;
 import android.widget.ViewFlipper;
 
 import com.example.milkteaappandroid.Controller.SanPhamMoiController;
-import com.example.milkteaappandroid.Model.SanPhamModel;
+import com.example.milkteaappandroid.Model.QuanModel;
 import com.example.milkteaappandroid.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -22,31 +36,69 @@ import com.example.milkteaappandroid.R;
  */
 public class Home extends Fragment {
 
-    public Home() {
-        // Required empty public constructor
-    }
+    DatabaseReference databaseReference;
     ViewFlipper viewFlipper;
     SanPhamMoiController sanPhamMoiController;
     RecyclerView recyclerSanPhamMoi;
+    ProgressBar progressBar;
+    ImageButton imgMap;
+    QuanModel quanModel;
+    double latitude=0, longitude=0;
+
+    public Home() {
+        // Required empty public constructor
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         // tạo slide================================================================================
         int images[] ={R.drawable.slide1,R.drawable.slide2};
 
-        viewFlipper= v.findViewById(R.id.slideImage);
+        viewFlipper= view.findViewById(R.id.slideImage);
 
         for (int img: images) {
-                Slider(img);
+            Slider(img);
         }
         // end tạo slide============================================================================
-        recyclerSanPhamMoi=v.findViewById(R.id.recycler_spmoi);
+        recyclerSanPhamMoi=view.findViewById(R.id.recycler_spmoi);
+        progressBar=view.findViewById(R.id.processbarhome);
 
-        return v;
+        imgMap=view.findViewById(R.id.imgMap);
+        quanModel= new QuanModel();
+        imgMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseReference= FirebaseDatabase.getInstance().getReference().child("thongtinquan");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        QuanModel quanModel=dataSnapshot.getValue(QuanModel.class);
+                        Intent intent = new Intent(getActivity(),MapActivity.class);
+                        intent.putExtra("latitudequan",quanModel.getLatitude());
+                        intent.putExtra("longitudequan",quanModel.getLongitude());
+                        view.getContext().startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+
+                });
+
+            }
+        });
     }
 
     @Override
@@ -55,7 +107,10 @@ public class Home extends Fragment {
 
         sanPhamMoiController = new SanPhamMoiController(getContext());
 
-        sanPhamMoiController.getDSSanPhamMoiController(recyclerSanPhamMoi);
+        sanPhamMoiController.getDSSanPhamMoiController(recyclerSanPhamMoi,progressBar);
+
+        //Log.d("vl",getLocationQuan()+"");
+
     }
 
     @Override
@@ -63,10 +118,9 @@ public class Home extends Fragment {
         super.onActivityCreated(savedInstanceState);
         // not working
 
-
-
-
     }
+
+
 
     public void Slider(int image){
         ImageView imageView= new ImageView(getActivity());
@@ -83,5 +137,34 @@ public class Home extends Fragment {
         viewFlipper.setInAnimation(getActivity(),android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(getActivity(),android.R.anim.slide_out_right);
     }
+
+    //public int getLocationQuan(){
+
+//        final Location location = new Location("");
+//        ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                DataSnapshot dataSnapshotTTQuan =dataSnapshot.child("thongtinquan");
+//                QuanModel quanModel = dataSnapshotTTQuan.getValue(QuanModel.class);
+//                Log.d("vl1",quanModel.getLatitude()+"");
+//                location.setLatitude(quanModel.getLatitude());
+//                location.setLongitude(quanModel.getLongitude());
+//                return;
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        };
+//        Log.d("vl",location.getLatitude()+"");
+//        databaseReference.addListenerForSingleValueEvent(valueEventListener);
+//        Log.d("vl1",location.getLatitude()+"");
+//
+//        return location;
+        //return quanModelList.size();
+
+    //}
 
 }

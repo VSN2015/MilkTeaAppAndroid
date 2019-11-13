@@ -8,16 +8,31 @@
     android:focusableInTouchMode="true"
     tools:context=".View.Home">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/theme"
-        android:focusableInTouchMode="false"
-        app:iconifiedByDefault="false"
-        app:queryHint="Nhìn cái gì- Search ở đây nè :v" >
+        android:orientation="horizontal">
 
-    </androidx.appcompat.widget.SearchView>
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="360dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/theme"
+            android:focusableInTouchMode="false"
+            app:iconifiedByDefault="false"
+            app:queryHint="Nhìn cái gì- Search ở đây nè :v">
+
+        </androidx.appcompat.widget.SearchView>
+
+        <ImageButton
+            android:id="@+id/imgMap"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/theme"
+            android:src="@drawable/ic_map_black_24dp" />
+
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scolllayout"
@@ -32,8 +47,8 @@
             <ViewFlipper
                 android:id="@+id/slideImage"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
-                android:layout_margin="7dp" >
+                android:layout_height="200dp"
+                android:layout_margin="7dp">
 
             </ViewFlipper>
 
@@ -68,6 +83,13 @@
                     android:background="@color/theme" />
             </LinearLayout>
 
+            <ProgressBar
+                android:id="@+id/processbarhome"
+                android:theme="@style/progressBarBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_spmoi"
                 android:layout_width="match_parent"
